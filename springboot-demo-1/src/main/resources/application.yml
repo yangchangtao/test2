@@ -1,0 +1,41 @@
+#指定默认的环境
+spring:  profiles:    active: dev
+
+--- 
+#定义环境名称
+spring:  profiles: dev
+
+#语法: key:(空格)value   
+#2.YML文件有层级结构 缩进方式控制层级
+server:  port: 8090  servlet:    context-path: /     #表示根目录发布
+    
+#为属性赋值,定义属性
+demo:
+  name: 手机666
+  age:  18
+
+#为jdbcController赋值
+jdbc:
+  url: 127.0.0.1:3306
+  username: root
+
+#将环境拆分
+---
+#定义环境名称
+spring:
+  profiles: pro
+  
+server:
+  port: 80
+  servlet:
+    context-path: /jt     #表示根目录发布
+    
+#为属性赋值,定义属性
+demo:
+  name: 手机666
+  age:  18
+
+#为jdbcController赋值
+jdbc:
+  url: 127.0.0.1:3306
+  username: root
